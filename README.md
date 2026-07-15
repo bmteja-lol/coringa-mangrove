@@ -102,17 +102,52 @@ This project adds XGBoost and DeepLabV3+ for a more comprehensive comparison.
 │   ├── evaluate.py             # IoU, accuracy, confusion matrix, plots
 │   └── train.py                # Pipeline orchestrator
 ├── scripts/run_all.py          # CLI entry point
-├── notebooks/                  # Jupyter notebooks (Colab)
+├── notebooks/                  # Jupyter notebooks
 └── results/figures/            # Output plots
 ```
 
+## Setup (VS Code)
+
+### Prerequisites
+
+- Python 3.9+
+- Google Earth Engine account ([signup](https://earthengine.google.com/signup/))
+
+### Installation
+
+```bash
+# Clone the repo
+git clone https://github.com/bmteja-lol/coringa-mangrove.git
+cd coringa-mangrove
+
+# Create virtual environment
+python -m venv venv
+source venv/bin/activate  # Linux/Mac
+# venv\Scripts\activate   # Windows
+
+# Install dependencies
+pip install earthengine-api geemap numpy pandas scikit-learn xgboost torch torchvision segmentation-models-pytorch matplotlib seaborn jupyter
+
+# Authenticate with Earth Engine (one-time)
+earthengine authenticate
+```
+
+### VS Code Extensions (recommended)
+
+- Python (Microsoft)
+- Jupyter
+- Pylance
+
 ## Usage
 
-### In Google Colab
+### Notebooks
 
-1. Open any notebook from `notebooks/`
-2. Mount Google Drive (if needed)
-3. Run all cells
+```bash
+# Launch Jupyter from project root
+jupyter notebook notebooks/
+```
+
+Open any notebook and run all cells.
 
 ### CLI
 
