@@ -140,14 +140,30 @@ earthengine authenticate
 
 ## Usage
 
-### Notebooks
+> **Recommended: VS Code** — persistent GEE auth, no session timeouts, local caching of satellite data, full debugger, and integrated git. Colab sessions disconnect after inactivity and require re-authentication every time.
+
+### Option 1: VS Code (recommended)
+
+Open the project folder in VS Code, install the recommended extensions, and run notebooks or scripts directly from the editor. Use the integrated terminal for CLI commands.
 
 ```bash
-# Launch Jupyter from project root
+# Run notebooks from terminal
 jupyter notebook notebooks/
+
+# Or use VS Code's built-in Jupyter extension to open .ipynb files directly
 ```
 
-Open any notebook and run all cells.
+### Option 2: Google Colab
+
+If you don't have a local machine with enough resources, you can run the notebooks in Colab:
+
+1. Upload the `notebooks/` folder to Google Drive
+2. Open any `.ipynb` file in Colab
+3. Run `pip install` cell at the top to install dependencies
+4. Authenticate Earth Engine: `ee.Authenticate()` (one-time per session)
+5. Run all cells
+
+> **Note:** Colab sessions timeout after ~12 hours of inactivity and GEE auth resets each session. For long DL training runs, VS Code is more reliable.
 
 ### CLI
 
